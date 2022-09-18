@@ -2,6 +2,8 @@
 
 set -o nounset # exit when trying to use undeclared variables
 
+echo "Doing my shit"
+
 git config --global user.email ${PGP_KEY_EMAIL}
 git config --global user.name ${USER_NAME}
 
