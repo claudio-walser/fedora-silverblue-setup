@@ -3,10 +3,9 @@
 . ./config.sh
 
 printf 'Proceed doing your git config and sign everything (y/n)? '
-read gitconfig
-# if echo "$answer" | grep -iq "^y" ;then
-echo $gitconfig
-if [ "$gitconfig" == "${gitconfig#[Yy]}" ] ;then
+read git_config
+
+if echo "$git_config" | grep -iq "^y" ;then
     echo "doit"
     . ./git-config.sh
 fi
