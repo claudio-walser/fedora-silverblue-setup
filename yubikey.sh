@@ -12,10 +12,7 @@ fi
 if [ ! -f "/etc/Yubico/u2f_keys" ]; then
     printf 'Short-Touch on the key. Are you ready? (y/N)!'
     read u2f
-
     if echo "$u2f" | grep -iq "^y" ;then
-        bash -ex ./yubikey.sh
-
         mkdir -p ~/.config/Yubico
         pamu2fcfg > ~/.config/Yubico/u2f_keys
         # move to a root only writable location for security
@@ -45,8 +42,6 @@ if [ ! $GDM_DONE ]; then
 else
     echo "/etc/pam.d/gdm-password already done"
 fi
-
-
 
 grep --silent "yubikey-" /etc/pam.d/sudo
 SUDO_DONE=$?
