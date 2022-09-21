@@ -2,11 +2,16 @@
 
 . ./config.sh
 
-printf 'Proceed doing your git config and sign everything (y/n)? '
+printf 'Git - proceed configuration? (y/n)'
 read git_config
-
 if echo "$git_config" | grep -iq "^y" ;then
-    echo "doit"
-    . ./git-config.sh
+    bash ./git-config.sh
 fi
+
+printf 'Yubikey - proceed configuration? (y/n)'
+read yubikey
+if echo "$yubikey" | grep -iq "^y" ;then
+    bash ./yubikey.sh
+fi
+
 echo "done"

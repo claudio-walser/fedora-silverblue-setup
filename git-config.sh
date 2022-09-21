@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -o nounset # exit when trying to use undeclared variables
 
 git config --global user.email ${PGP_KEY_EMAIL}
