@@ -1,9 +1,15 @@
 set -o nounset # exit when trying to use undeclared variables
 
-# if package not installed
-which pamu2fcfgs &>1
+# if packages not installed
+if [ ! -f /usr/lib64/security/pam_u2f.so ]; then
+    $PACKAGE_MANAGER install pam-u2f
+else
+    echo "pam u2f packages already installed!"
+fi
+
+which pamu2fcfg &>1
 if [ $? -gt  0 ]; then
-    $PACKAGE_MANAGER install pam-u2f pamu2fcfg
+    $PACKAGE_MANAGER install pamu2fcfg
 else
     echo "pam u2f packages already installed!"
 fi
@@ -36,7 +42,7 @@ fi
 
 grep --silent "yubikey-" /etc/pam.d/gdm-password
 GDM_DONE=$?
-if [ ! $GDM_DONE ]; then
+if [ $GDM_DONE != 0 ]; then
     GDM_FILE_CONTENT=$(awk '/auth        substack      password-auth/{print "auth        include       yubikey-sufficient"}1' /etc/pam.d/gdm-password)
     echo "$GDM_FILE_CONTENT" | sudo tee /etc/pam.d/gdm-password
 else
@@ -45,7 +51,7 @@ fi
 
 grep --silent "yubikey-" /etc/pam.d/sudo
 SUDO_DONE=$?
-if [ ! $SUDO_DONE ]; then
+if [ $SUDO_DONE != 0 ]; then
     SUDO_FILE_CONTENT=$(awk '/auth       include      system-auth/{print "auth       include      yubikey-sufficient"}1' /etc/pam.d/sudo)
     echo "$SUDO_FILE_CONTENT" | sudo tee /etc/pam.d/sudo
 else
@@ -54,7 +60,7 @@ fi
 
 grep --silent "yubikey-" /etc/pam.d/login
 LOGIN_DONE=$?
-if [ ! $LOGIN_DONE ]; then
+if [ $LOGIN_DONE != 0 ]; then
     LOGIN_FILE_CONTENT=$(awk '/auth       substack     system-auth/{print "auth       include      yubikey-sufficient"}1' /etc/pam.d/login)
     echo "$LOGIN_FILE_CONTENT" | sudo tee /etc/pam.d/login
 else
