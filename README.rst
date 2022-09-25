@@ -1,2 +1,1 @@
-# my personal setup files for my silverblue
-Hoi
+# my personal setup files for my fedora installations
