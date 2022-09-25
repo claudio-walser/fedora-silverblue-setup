@@ -44,7 +44,7 @@ if [ $? -gt  0 ]; then
     SUDO_FILE_CONTENT_CLEAN=$(grep -v yubikey /etc/pam.d/gdm-password)
     SUDO_FIND="auth       include      system-auth"
     SUDO_FILE_CONTENT_NEW=$(echo "$SUDO_FILE_CONTENT_CLEAN" | sed "s/${SUDO_FIND}/auth        include       yubikey-${YUBIKEY_LINUX_LOGIN_TYPE}-${YUBIKEY_LINUX_SUDO_LEVEL}\n${SUDO_FIND}/g")
-    echo "$SUDO_FILE_CONTENT" | sudo tee /etc/pam.d/sudo
+    echo "$SUDO_FILE_CONTENT_NEW" | sudo tee /etc/pam.d/sudo
 else
     echo "/etc/pam.d/sudo already done"
 fi
