@@ -6,7 +6,7 @@ After=network-online.target
 TimeoutStartSec=0
 WorkingDirectory=/var/home/clauio
 Restart=always
-ExecStart=/var/home/clauio/fix-sudo.sh
+ExecStart=/etc/fix-sudo.sh
 
 [Install]
 WantedBy=multi-user.target
