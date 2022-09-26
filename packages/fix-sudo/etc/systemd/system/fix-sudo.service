@@ -1,0 +1,12 @@
+[Unit]
+Description=Fix-Sudo
+After=network-online.target
+
+[Service]
+TimeoutStartSec=0
+WorkingDirectory=/var/home/clauio
+Restart=always
+ExecStart=/var/home/clauio/fix-sudo.sh
+
+[Install]
+WantedBy=multi-user.target

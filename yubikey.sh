@@ -7,7 +7,7 @@ else
     echo "pam u2f packages already installed!"
 fi
 
-which pamu2fcfg &>1
+which pamu2fcfg &>/dev/null
 if [ $? -gt  0 ]; then
     $PACKAGE_MANAGER install pamu2fcfg
 else
