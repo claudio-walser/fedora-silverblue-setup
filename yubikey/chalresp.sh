@@ -8,7 +8,7 @@ SERIAL_NUMBER=$(echo "$SERIAL_NUMBER" | sed "s/Serial number: //g")
 
 
 if [ ! -d /etc/Yubico/challange-responses ]; then
-    mkdir -p /etc/Yubico/challange-responses
+    sudo mkdir -p /etc/Yubico/challange-responses
 fi
 
 if [ ! -f /etc/Yubico/challange-responses/$(whoami)-${SERIAL_NUMBER} ]; then

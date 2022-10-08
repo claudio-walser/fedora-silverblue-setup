@@ -2,14 +2,14 @@ set -o nounset # exit when trying to use undeclared variables
 
 # if packages not installed
 if [ ! -f /usr/lib64/security/pam_u2f.so ]; then
-    $PACKAGE_MANAGER install pam-u2f
+    $PACKAGE_MANAGER pam-u2f
 else
     echo "pam u2f packages already installed!"
 fi
 
 which pamu2fcfg &>/dev/null
 if [ $? -gt  0 ]; then
-    $PACKAGE_MANAGER install pamu2fcfg
+    $PACKAGE_MANAGER pamu2fcfg
 else
     echo "pam u2f packages already installed!"
 fi

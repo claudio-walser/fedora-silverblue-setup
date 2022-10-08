@@ -1,6 +1,7 @@
 set -o nounset # exit when trying to use undeclared variables
 
 # install yubikey manager
+mkdir -p ~/.local/bin
 APPLICATION=~/.local/bin/yubikey-manager
 echo "Downloading latest yubikey-manager from yubico"
 curl --location -o $APPLICATION https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-latest-linux.AppImage
@@ -23,6 +24,12 @@ else
     fi
 fi
 
+
+if [ ! -f ~/Bilder/Logos/yubikey-manager.png ]; then
+    echo "Downloading yubikey manager logo"
+    mkdir -p ~/Bilder/Logos/
+    curl --location -o ~/Bilder/Logos/yubikey-manager.png https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/yubikey-personalization-gui-icon.png
+fi
 
 
 if [ ! -f ~/.local/share/applications/yubikey-manager.desktop ]; then
