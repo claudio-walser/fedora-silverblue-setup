@@ -17,6 +17,7 @@ fi
 # install/upgrade yubico software
 bash ./yubikey/manager.sh
 bash ./yubikey/authenticator.sh
+bash ./yubikey/keyring-unlock.sh
 
 
 if [ $YUBIKEY_LINUX_LOGIN_TYPE == "chalresp" ]; then
