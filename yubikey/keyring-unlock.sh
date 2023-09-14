@@ -6,3 +6,5 @@ mkdir -p $HOME/.config/systemd/user/
 
 pip install --user --upgrade gnome-keyring-gpg-unlock
 gnome-keyring-gpg-unlock setup --public-key $PGP_KEY_ID --secret $HOME/.sec/gnome-keyring
+
+Die ersten Symptome zeigen sich, das es Microsoft mit Github langsam verbockt :D
