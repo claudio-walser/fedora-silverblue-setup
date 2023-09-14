@@ -1,5 +1,7 @@
 set -o nounset # exit when trying to use undeclared variables
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 flatpak install \
 	com.brave.Browser \
 	com.microsoft.Teams \
