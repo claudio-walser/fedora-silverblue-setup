@@ -4,7 +4,7 @@ source /etc/os-release
 
 export PACKAGE_MANAGER="rpm-ostree install --idempotent" #sudo dnf install|rpm-ostree install --idempotent
 export REBOOT="echo 'systemctl reboot'"
-
+export NVIDIA=1 # 1|0 whether you use nvidia hardware (poor soul) or you dont
 export FEDORA_VERSION=$VERSION_ID
 
 export PGP_KEY_ID="5638393858B04300"
