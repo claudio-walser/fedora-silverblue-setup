@@ -4,9 +4,9 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 flatpak install \
 	com.brave.Browser \
-	com.microsoft.Teams \
-	io.lbry.lbry-app \
+	com.github.IsmaelMartinez.teams_for_linux \
 	org.gimp.GIMP \
+	org.blender.Blender \
 	runtime/org.kde.KStyle.Adwaita/x86_64/5.15 \
 	org.keepassxc.KeePassXC \
 	org.libreoffice.LibreOffice \
