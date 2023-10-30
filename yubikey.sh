@@ -17,6 +17,7 @@ fi
 # install/upgrade yubico software
 bash ./yubikey/manager.sh
 bash ./yubikey/authenticator.sh
+bash ./yubikey/pgp-ssh.sh
 bash ./yubikey/keyring-unlock.sh
 
 
