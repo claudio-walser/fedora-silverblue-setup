@@ -13,4 +13,5 @@ flatpak install \
 	org.openscad.OpenSCAD \
 	org.signal.Signal \
 	org.videolan.VLC \
-	com.slack.Slack
+	com.slack.Slack \
+	com.discordapp.Discord
