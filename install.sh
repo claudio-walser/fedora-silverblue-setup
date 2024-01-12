@@ -39,6 +39,13 @@ if echo "$git_config" | grep -iq "^y" ;then
 fi
 
 
+printf 'Kubectl - proceed configuration? (y/N)'
+read kubectl
+if echo "$kubectl" | grep -iq "^y" ;then
+    bash -x ./kubectl.sh
+fi
+
+
 
 
 

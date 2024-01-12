@@ -14,4 +14,5 @@ flatpak install \
 	org.signal.Signal \
 	org.videolan.VLC \
 	com.slack.Slack \
-	com.discordapp.Discord
+	com.discordapp.Discord \
+	org.gnome.seahorse.Application
