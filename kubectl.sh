@@ -7,11 +7,10 @@ mv ./kubectl $HOME/.local/bin
 
 # install krew
 
-# .bashrc.d to load gpg-agent
 mkdir -p ~/.bashrc.d
 if [ ! -f ~/.bashrc.d/krew ]; then
-    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"'
-    cat > ~/.bashrc.d/krew <<EOL
+    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' > ~/.bashrc.d/krew
+fi
 
 (
   set -x; cd "$(mktemp -d)" &&
@@ -22,3 +21,15 @@ if [ ! -f ~/.bashrc.d/krew ]; then
   tar zxvf "${KREW}.tar.gz" &&
   ./"${KREW}" install krew
 )
+
+# source new autocompletion
+. ~/.bashrc.d/krew
+kubectl krew install ctx
+kubectl krew install ns
+
+cd /tmp
+curl -LO "https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-amd64.zip"
+unzip kubelogin-linux-amd64.zip
+mv ./bin/linux_amd64/kubelogin $HOME/.local/bin
+rm -rf kubelogin-linux-amd64.zip ./bin/
+cd -
