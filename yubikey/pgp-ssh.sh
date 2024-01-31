@@ -33,6 +33,20 @@ else
     echo "sshcontrol file already done"
 fi
 
+# gpg scdaemon
+if [ ! -f ~/.gnupg/scdaemon.conf ]; then
+    echo "Writing scdaemon file"
+    cat > ~/.gnupg/scdaemon.conf <<EOL
+disable-ccid
+pcsc-shared
+pcsc-driver /usr/lib64/libpcsclite.so.1
+EOL
+
+else
+    echo "scdaemon file already done"
+fi
+
+
 # .bashrc.d to load gpg-agent
 mkdir -p ~/.bashrc.d
 if [ ! -f ~/.bashrc.d/pgp ]; then
