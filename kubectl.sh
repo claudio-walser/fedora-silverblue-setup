@@ -26,6 +26,7 @@ fi
 . ~/.bashrc.d/krew
 kubectl krew install ctx
 kubectl krew install ns
+kubectl krew install graph
 
 cd /tmp
 curl -LO "https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-amd64.zip"
