@@ -14,11 +14,11 @@ if echo "$packages" | grep -iq "^y" ;then
     bash -x ./packages.sh
 fi
 
-printf 'Sublime - proceed installation? (y/N)'
-read sublime
-if echo "$sublime" | grep -iq "^y" ;then
-    bash -x ./sublime.sh
-fi
+#printf 'Sublime - proceed installation? (y/N)'
+#read sublime
+#if echo "$sublime" | grep -iq "^y" ;then
+#    bash -x ./sublime.sh
+#fi
 
 printf 'Flatpak - proceed installation? (y/N)'
 read flatpak
