@@ -45,6 +45,11 @@ if echo "$kubectl" | grep -iq "^y" ;then
     bash -x ./kubectl.sh
 fi
 
+printf 'Office Tools - proceed installation? (y/N)'
+read officeTools
+if echo "$officeTools" | grep -iq "^y" ;then
+    bash -x ./office-tools.sh
+fi
 
 
 

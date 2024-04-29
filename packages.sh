@@ -32,5 +32,6 @@ $PACKAGE_MANAGER \
 	pam_yubico \
 	pamu2fcfg \
 	python-pip \
-	yubico-piv-tool
+	yubico-piv-tool \
+	onedrive
 $REBOOT
