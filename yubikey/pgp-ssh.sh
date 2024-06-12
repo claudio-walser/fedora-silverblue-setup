@@ -56,12 +56,33 @@ export SSH_AUTH_SOCK=\$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # needs a pin for every new shell, this should be done only once at login
-gpg-connect-agent killagent /bye &> /dev/null
-gpg-connect-agent /bye &> /dev/null
+#gpg-connect-agent killagent /bye &> /dev/null
+#gpg-connect-agent /bye &> /dev/null
 EOL
 
 else
     echo "pgp-ssh .bashrc.d file already done"
 fi
 
+# .bashrc.d to load gpg-agent
+mkdir -p ~/.config/systemd/user
+if [ ! -f ~/.config/systemd/user/gpg-ssh.service ]; then
+    echo "Writing gpg-ssh.service file"
+    cat > ~/.config/systemd/user/gpg-ssh.service <<EOL
+[Unit]
+Description=Using gpg as an ssh identity
+BindsTo=gnome-session.target
+[Service]
+Type=oneshot
+ExecStart=gpg-connect-agent killagent /bye &> /dev/null && gpg-connect-agent /bye &> /dev/null
 
+[Install]
+WantedBy=gnome-session.target
+EOL
+
+systemctl --user daemon-reload
+systemctl --user enable gpg-ssh.service
+
+else
+    echo "pgp-ssh ~/.config/systemd/user/gpg-ssh.service already done"
+fi
