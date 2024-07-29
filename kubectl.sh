@@ -27,6 +27,7 @@ fi
 kubectl krew install ctx
 kubectl krew install ns
 kubectl krew install graph
+kubectl krew install neat
 
 cd /tmp
 curl -LO "https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-amd64.zip"
