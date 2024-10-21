@@ -33,5 +33,7 @@ $PACKAGE_MANAGER \
 	pamu2fcfg \
 	python-pip \
 	yubico-piv-tool \
-	onedrive
+	onedrive \
+	openambit \
+	openambit-libs
 $REBOOT
