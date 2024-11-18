@@ -17,6 +17,3 @@ flatpak install \
 	com.discordapp.Discord \
 	org.gnome.seahorse.Application \
 	com.sublimetext.three
-
-
-content-security-policy: object-src 'none'; script-src 'none'; base-uri 'none';
