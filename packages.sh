@@ -16,7 +16,6 @@ $PACKAGE_MANAGER \
 	golang-shared \
 	gstreamer-plugins-bad \
 	gstreamer-plugins-ugly \
-	gstreamer1-plugin-openh264 \
 	gstreamer1-plugins-bad-freeworld \
 	gstreamer1-vaapi \
 	libXcursor-devel \
@@ -26,7 +25,6 @@ $PACKAGE_MANAGER \
 	libXxf86vm-devel \
 	mesa-libGL-devel \
 	mingw64-gcc \
-	mozilla-openh264 \
 	nodejs \
 	pam-u2f \
 	pam_yubico \
