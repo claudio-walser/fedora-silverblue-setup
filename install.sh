@@ -51,6 +51,17 @@ if echo "$officeTools" | grep -iq "^y" ;then
     bash -x ./office-tools.sh
 fi
 
+printf 'Cosmic Desktop Environment - proceed installation? (y/N)'
+read cosmicDesktop
+if echo "$cosmicDesktop" | grep -iq "^y" ;then
+    bash -x ./cosmic.sh
+fi
+
+printf 'gTile Gnome Excentsion - proceed installation? (y/N)'
+read gTile
+if echo "$gTile" | grep -iq "^y" ;then
+    bash -x ./gTile.sh
+fi
 
 
 
