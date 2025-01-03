@@ -14,6 +14,13 @@ if echo "$packages" | grep -iq "^y" ;then
     bash -x ./packages.sh
 fi
 
+if $NVIDIA; then
+    printf 'Nvidia - proceed installation? (y/N)'
+    read nvidia
+    if echo "$nvidia" | grep -iq "^y" ;then
+        bash -x ./nvidia.sh
+    fi
+fi
 #printf 'Sublime - proceed installation? (y/N)'
 #read sublime
 #if echo "$sublime" | grep -iq "^y" ;then

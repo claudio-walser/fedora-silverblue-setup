@@ -16,4 +16,6 @@ flatpak install \
 	com.slack.Slack \
 	com.discordapp.Discord \
 	org.gnome.seahorse.Application \
-	com.sublimetext.three
+	com.sublimetext.three \
+	cc.arduino.IDE2 \
+	com.ktechpit.ultimate-media-downloader \

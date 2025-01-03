@@ -2,7 +2,6 @@ set -o nounset # exit when trying to use undeclared variables
 
 $PACKAGE_MANAGER \
 	gcc-c++ \
-	akmod-nvidia \
 	clamav \
 	clamav-data \
 	clamav-filesystem \
@@ -23,7 +22,6 @@ $PACKAGE_MANAGER \
 	libXinerama-devel \
 	libXrandr-devel \
 	libXxf86vm-devel \
-	mesa-libGL-devel \
 	mingw64-gcc \
 	nodejs \
 	pam-u2f \
@@ -31,7 +29,4 @@ $PACKAGE_MANAGER \
 	pamu2fcfg \
 	python-pip \
 	yubico-piv-tool \
-	onedrive \
-	openambit \
-	openambit-libs
 $REBOOT
