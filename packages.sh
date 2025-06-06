@@ -1,7 +1,7 @@
 set -o nounset # exit when trying to use undeclared variables
 
 $PACKAGE_MANAGER \
-	gcc-c++ \
+	android-tools \
 	clamav \
 	clamav-data \
 	clamav-filesystem \
@@ -10,6 +10,7 @@ $PACKAGE_MANAGER \
 	clamav-server \
 	clamav-server-systemd \
 	clamav-update \
+ 	gcc-c++  \
 	gnome-tweak-tool \
 	golang \
 	golang-shared \
