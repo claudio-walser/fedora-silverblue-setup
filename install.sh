@@ -52,6 +52,18 @@ if echo "$kubectl" | grep -iq "^y" ;then
     bash -x ./kubectl.sh
 fi
 
+printf 'Development Setup - proceed configuration? (y/N)'
+read development
+if echo "$development" | grep -iq "^y" ;then
+    bash -x ./development.sh
+fi
+
+printf 'udev Rules - proceed configuration? (y/N)'
+read udev
+if echo "$udev" | grep -iq "^y" ;then
+    bash -x ./udev-rules.sh
+fi
+
 printf 'Office Tools - proceed installation? (y/N)'
 read officeTools
 if echo "$officeTools" | grep -iq "^y" ;then
