@@ -19,3 +19,4 @@ flatpak install \
 	com.sublimetext.three \
 	cc.arduino.IDE2 \
 	com.ktechpit.ultimate-media-downloader \
+ 	org.flatpak.Builder
