@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0407",  RUN+="/usr/bin/systemctl --no-block restart pcscd.service"
