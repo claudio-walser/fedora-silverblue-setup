@@ -30,4 +30,6 @@ $PACKAGE_MANAGER \
 	pamu2fcfg \
 	python-pip \
 	yubico-piv-tool \
+	java-21-openjdk-devel \
+	java-21-openjdk
 $REBOOT
