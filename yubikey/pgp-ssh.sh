@@ -5,6 +5,10 @@ if [ ! -f ~/.gnupg/gpg-agent.conf ]; then
     echo "Writing gpg-agent.conf file"
     cat > ~/.gnupg/gpg-agent.conf <<EOL
 enable-ssh-support
+default-cache-ttl 3600
+max-cache-ttl 7200
+default-cache-ttl-ssh 3600
+max-cache-ttl-ssh 7200
 EOL
 
 else
@@ -40,6 +44,7 @@ if [ ! -f ~/.gnupg/scdaemon.conf ]; then
 disable-ccid
 pcsc-shared
 pcsc-driver /usr/lib64/libpcsclite.so.1
+allow-pinentry-notify
 EOL
 
 else
